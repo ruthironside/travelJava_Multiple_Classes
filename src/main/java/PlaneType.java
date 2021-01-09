@@ -1,8 +1,8 @@
 public enum PlaneType {
 
-    BOEING747(100, 1000000),
-    CONCORD(2, 1500000),
-    JUMBO(200, 2000000);
+    BOEING747(100, 100),
+    CONCORD(2, 150),
+    JUMBO(200, 200);
 
     private final int capacity;
     private final int totalWeight;

@@ -46,6 +46,10 @@ public class Flight {
         return this.plane.getCapacity();
     }
 
+    public int getTotalWeightFromPlane() {
+        return this.plane.getTotalWeight();
+    }
+
 
     public void canBookAPassenger(Passenger passenger) {
         if (this.passengerListSize() < this.getCapacityFromPlane()) {
@@ -57,5 +61,13 @@ public class Flight {
 
     public int passengerListSize() {
         return this.passengers.size();
+    }
+
+    public int getAllPassengerBags() {
+        int totalBags = 0;
+        for(Passenger passenger : passengers) {
+            totalBags = totalBags + passenger.getNumberOfBags();
+        }
+        return totalBags;
     }
 }

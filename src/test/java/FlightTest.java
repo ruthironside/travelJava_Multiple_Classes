@@ -52,5 +52,11 @@ public class FlightTest {
     }
 
 
+    @Test
+    public void getAllPassengerBags() {
+        flight1.canBookAPassenger(passenger1);
+        flight1.canBookAPassenger(passenger2);
+        assertEquals(8, flight1.getAllPassengerBags());
 
+    }
 }
