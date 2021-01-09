@@ -41,11 +41,23 @@ public class FlightTest {
         assertEquals(100, boeingPlane.getCapacityFromPlaneType());
     }
 
+    @Test
+    public void passengerListSizeStartsAt0() {
+        assertEquals(0, flight1.passengerListSize());
+    }
+
 
     @Test
     public void canBookAPassenger_underCapacity() {
         flight1.canBookAPassenger(passenger1);
-        assertEquals(50, concordPlane.getCapacityFromPlaneType());
+        assertEquals(1, flight1.passengerListSize());
+    }
+
+    @Test
+    public void canBookAPassenger_atCapacity() {
+        flight1.canBookAPassenger(passenger1);
+        flight1.canBookAPassenger(passenger2);
+        assertEquals(2, flight1.passengerListSize());
     }
 
 

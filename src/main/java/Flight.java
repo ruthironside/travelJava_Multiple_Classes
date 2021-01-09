@@ -56,4 +56,7 @@ public class Flight {
         return this.passengers.size();
     }
 
+    public int passengerListSize() {
+        return this.passengers.size();
+    }
 }
