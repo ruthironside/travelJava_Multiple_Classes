@@ -13,8 +13,6 @@ public class Plane {
         return this.plane;
     }
 
-    public int getCapacityFromPlaneType() {
-        return this.plane.getCapacity();
-    }
+
 
 }

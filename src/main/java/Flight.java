@@ -42,19 +42,18 @@ public class Flight {
         return departureTime;
     }
 
-    public int getCapacityFromPlaneType() {
+    public int getCapacityFromPlane() {
         return this.plane.getCapacity();
     }
 
-    public void canBookAPassenger(Passenger passenger1) {
-        if (getCapacityFromPlaneType() > currentCapacity()) {
-            this.passengers.add(passenger1);
+
+    public void canBookAPassenger(Passenger passenger) {
+        if (this.passengerListSize() < this.getCapacityFromPlane()) {
+            this.passengers.add(passenger);
         }
     }
 
-    private int currentCapacity() {
-        return this.passengers.size();
-    }
+
 
     public int passengerListSize() {
         return this.passengers.size();

@@ -28,17 +28,7 @@ public class FlightTest {
 
     @Test
     public void returnTheNumberOfSeatsOnConcord() {
-        assertEquals(50, concordPlane.getCapacityFromPlaneType());
-    }
-
-    @Test
-    public void returnTheNumberOfSeatsOnJumbo() {
-        assertEquals(200, jumboPlane.getCapacityFromPlaneType());
-    }
-
-    @Test
-    public void returnTheNumberOfSeatsOnBoeing() {
-        assertEquals(100, boeingPlane.getCapacityFromPlaneType());
+        assertEquals(2, flight1.getCapacityFromPlane());
     }
 
     @Test
@@ -54,11 +44,13 @@ public class FlightTest {
     }
 
     @Test
-    public void canBookAPassenger_atCapacity() {
+    public void cantBookAPassenger_overCapacity() {
         flight1.canBookAPassenger(passenger1);
         flight1.canBookAPassenger(passenger2);
+        flight1.canBookAPassenger(passenger3);
         assertEquals(2, flight1.passengerListSize());
     }
+
 
 
 }
