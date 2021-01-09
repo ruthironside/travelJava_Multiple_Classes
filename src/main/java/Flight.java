@@ -3,15 +3,15 @@ import java.util.ArrayList;
 public class Flight {
 
     private ArrayList<Passenger> passengers;
-    private PlaneType type;
-    private int flightNumber;
+    private PlaneType plane;
+    private String flightNumber;
     private String destination;
     private String departureAirport;
     private String departureTime;
 
-    public Flight(PlaneType planeType, int flightNumber, String destination, String departureAirport, String departureTime) {
+    public Flight(PlaneType planeType, String flightNumber, String destination, String departureAirport, String departureTime) {
         this.passengers = new ArrayList<Passenger>();
-        this.type = planeType;
+        this.plane = planeType;
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.departureAirport = departureAirport;
@@ -23,10 +23,10 @@ public class Flight {
     }
 
     public PlaneType getType() {
-        return type;
+        return plane;
     }
 
-    public int getFlightNumber() {
+    public String getFlightNumber() {
         return flightNumber;
     }
 
@@ -42,5 +42,18 @@ public class Flight {
         return departureTime;
     }
 
+    public int getCapacityFromPlaneType() {
+        return this.plane.getCapacity();
+    }
+
+    public void canBookAPassenger(Passenger passenger1) {
+        if (getCapacityFromPlaneType() > currentCapacity()) {
+            this.passengers.add(passenger1);
+        }
+    }
+
+    private int currentCapacity() {
+        return this.passengers.size();
+    }
 
 }

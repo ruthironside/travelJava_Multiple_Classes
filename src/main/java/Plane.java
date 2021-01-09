@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class Plane {
 
     private PlaneType plane;
+    private ArrayList<Passenger> passengers;
 
     public Plane(PlaneType plane) {
         this.plane = plane;
@@ -14,7 +17,4 @@ public class Plane {
         return this.plane.getCapacity();
     }
 
-    public int getTotalWeightFromPlaneType() {
-        return this.plane.getTotalWeight();
-    }
 }

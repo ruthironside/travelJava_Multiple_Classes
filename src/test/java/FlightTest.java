@@ -1,11 +1,13 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
 
-    Flight flight;
+    Flight flight1;
     Plane concordPlane;
     Plane jumboPlane;
     Plane boeingPlane;
@@ -15,6 +17,7 @@ public class FlightTest {
 
     @Before
     public void setUp() {
+        flight1 = new Flight(PlaneType.CONCORD, "FR756", "EDI", "GLA", "12.00" );
         concordPlane = new Plane(PlaneType.CONCORD);
         jumboPlane = new Plane(PlaneType.JUMBO);
         boeingPlane = new Plane(PlaneType.BOEING747);
@@ -37,5 +40,13 @@ public class FlightTest {
     public void returnTheNumberOfSeatsOnBoeing() {
         assertEquals(100, boeingPlane.getCapacityFromPlaneType());
     }
+
+
+    @Test
+    public void canBookAPassenger_underCapacity() {
+        flight1.canBookAPassenger(passenger1);
+        assertEquals(50, concordPlane.getCapacityFromPlaneType());
+    }
+
 
 }
