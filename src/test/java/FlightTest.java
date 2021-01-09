@@ -1,8 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class FlightTest {
 
+    Flight flight;
     Plane concordPlane;
     Plane jumboPlane;
     Plane boeingPlane;
@@ -18,8 +21,21 @@ public class FlightTest {
         passenger1 = new Passenger("Hulk", 6);
         passenger2 = new Passenger("Thor", 2);
         passenger3 = new Passenger("Batman", 3);
-
     }
 
     @Test
+    public void returnTheNumberOfSeatsOnConcord() {
+        assertEquals(50, concordPlane.getCapacityFromPlaneType());
+    }
+
+    @Test
+    public void returnTheNumberOfSeatsOnJumbo() {
+        assertEquals(200, jumboPlane.getCapacityFromPlaneType());
+    }
+
+    @Test
+    public void returnTheNumberOfSeatsOnBoeing() {
+        assertEquals(100, boeingPlane.getCapacityFromPlaneType());
+    }
+
 }
