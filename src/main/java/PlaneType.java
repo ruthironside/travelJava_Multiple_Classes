@@ -1,11 +1,11 @@
 public enum PlaneType {
 
-    BOEING747(100, 100),
-    CONCORD(2, 150),
-    JUMBO(200, 200);
+    BOEING747(100, 1000),
+    CONCORD(2, 1000),
+    JUMBO(200, 2000);
 
     private final int capacity;
-    private final int totalWeight;
+    private final double totalWeight;
 
     PlaneType(int capacity, int totalWeight) {
         this.capacity = capacity;
@@ -16,7 +16,7 @@ public enum PlaneType {
         return this.capacity;
     }
 
-    public int getTotalWeight() {
+    public double getTotalWeight() {
         return this.totalWeight;
     }
 }

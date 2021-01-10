@@ -46,7 +46,7 @@ public class Flight {
         return this.plane.getCapacity();
     }
 
-    public int getTotalWeightFromPlane() {
+    public double getTotalWeightFromPlane() {
         return this.plane.getTotalWeight();
     }
 
@@ -56,8 +56,6 @@ public class Flight {
             this.passengers.add(passenger);
         }
     }
-
-
 
     public int passengerListSize() {
         return this.passengers.size();

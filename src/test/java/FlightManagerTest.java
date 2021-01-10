@@ -22,12 +22,18 @@ public class FlightManagerTest {
 
     @Test
     public void getBagWeightPerPassenger() {
-        assertEquals(37, flightManager.getBagWeightPerPassenger(flight), 0.01);
+        assertEquals(250, flightManager.getBagWeightPerPassenger(flight), 0.01);
     }
 
-//    @Test
-//    public void getBagWeightTotal () {
-//        flight.canBookAPassenger(passenger1);
-//        assertEquals(300, flightManager.getBagWeightTotal(flight), 0.01);
-//    }
+    @Test
+    public void getBagWeightTotal () {
+        flight.canBookAPassenger(passenger1);
+        assertEquals(1500, flightManager.getBagWeightTotal(flight), 0.01);
+    }
+
+    @Test
+    public void getWeightRemainingOnFlight () {
+        flight.canBookAPassenger(passenger1);
+        assertEquals(-1000, flightManager.weightRemainingOnFlight(flight), 0.01);
+    }
 }
